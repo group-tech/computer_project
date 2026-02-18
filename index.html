@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#" target="_self">
+                <img src="img/logo/logo.png" alt="logo">
+            </a>
+        </div>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <a href="#" class="btn-drop">Category ▾</a>
+                <div class="nenu-drop">
+                    <a href="pages/allcategoies/asus.html">ASUS</a>
+                    <a href="pages/allcategoies/acer.html">ACER</a>
+                    <a href="pages/allcategoies/dell.html">DELL</a>
+                    <a href="pages/allcategoies/mac.html">MAC</a>
+                </div>
+            </div>
+            <a href="pages/aboutus.html">About Us</a>
+            <a href="pages/contactus.html">Contact Us</a>
+        </nav>
+        <div class="right-bar">
+        <input type="text" class="search" placeholder="Search">Search
+        <a href="auth/login.html">
+        <button type="button" class="btn-login">Sign In</button>
+        </a>
+        </div>
+    </header>
+
+
+    <div class="slider">
+        <img src="img/acer/acer1.png" class="slide active">
+        <img src="img/asus/asus1.png" class="slide">
+        <img src="img/dell/dell1.jpg" class="slide">
+
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+
+    <div class="text">Recommended For You</div>
+    <div class="content">
+        <div class="content-container">
+            <div class="product">
+                <a href="detail_page/aceraspire5.html"><img src="img/acer/acer2-removebg-preview.png" alt="acer"></a>
+                <h3 class="product-name">Acer Aspire 5</h3>
+                <p class="product-price">$599</p>
+            </div>
+            <div class="product">
+                <a href="detail_page/asusvivobook15.html"><img src="img/asus/asus1.png" alt="asus"></a>
+                <h3 class="product-name">ASUS VivoBook 15</h3>
+                <p class="product-price">$649</p>
+            </div>
+            <div class="product">
+                <a href="detail_page/dellinspiron15.html"><img src="img/dell/dell1.jpg" alt="dell"></a>
+                <h3 class="product-name">Dell Inspiron 15</h3>
+                <p class="product-price">$699</p>
+            </div>  
+            <div class="product">
+                <a href="detail_page/macbookairm1.html"><img src="img/mac/mac1.jpg" alt="mac"></a>
+                <h3 class="product-name">MacBook Air M1</h3>
+                <p class="product-price">$999</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text1">Popular Now</div>
+        <div class="content">
+        <div class="content-container">
+            <div class="product">
+                <a href="detail_page/acernitro5.html"><img src="img/acer/acer3.png" alt="acer"></a>
+                <h3 class="product-name">Acer Nitro 5</h3>
+                <p class="product-price">$799</p>
+            </div>
+            <div class="product">
+                <a href="detail_page/asusrogstrix.html"><img src="img/asus/asus3.jpg" alt="asus"></a>
+                <h3 class="product-name">ASUS ROG Strix</h3>
+                <p class="product-price">$1099</p>
+            </div>
+            <div class="product">
+                <a href="detail_page/dellxps13.html"><img src="img/dell/dell3.jpg" alt="dell"></a>
+                <h3 class="product-name">Dell XPS 13</h3>
+                <p class="product-price">$1199</p>
+            </div>  
+            <div class="product">
+                <a href="detail_page/macbookpro14.html"><img src="img/mac/mac4.jpg" alt="mac"></a>
+                <h3 class="product-name">MacBook Pro 14</h3>
+                <p class="product-price">$1999</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <table>
+            <tr>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <td>chanthasamnang@gmail.com</td>
+                <td>069814205
+                    011 600619
+                    012 395190
+                    013 880612
+                    016 229514
+                </td>
+                <td>No. 86A, Street 110, Russian Federation Boulevard,<br>
+                    Sangkat Teuk Laak I, Khan Toul Kork,<br>
+                    Phnom Penh, Cambodia
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  document.querySelector('.next').onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  };
+
+  document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  };
+
+  // Auto slide
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 3000);
+</script>
+
+    
+</body>
+</html>
